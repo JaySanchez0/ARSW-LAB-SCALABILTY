@@ -329,6 +329,8 @@ http://52.155.223.248/fibonacci/1
 
 2.Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con Ã©xito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
 
+![img](images/prueba1balanceador.PNG)
+
 3. Agregue una 4 maquina virtual y realice las pruebas de newman, pero esta vez no lance 2 peticiones en paralelo, sino que incrementelo a 4. Haga un informe donde presente el comportamiento de la CPU de las 4 VM y explique porque la tasa de Ã©xito de las peticiones aumento con este estilo de escalabilidad.
 
 ```
@@ -372,20 +374,29 @@ Este sirve de mecanismo que le dice al balanceador por que uerto va a consultar 
 
 Permite conectar los recursos mediante una red privada.
 
-**Address space:** Define el conjunto de direcciones ip con las que se contaran.
+**Virtual network:** Hace referencia a crear una red privada mediante la cual un conjunto de maquinas virtuales se encuentran vinculadas.
+**Subnet:** Conjunto de redes que se pueden crear a partir de un conjunto de ips dadas.
 
-**Subnets:** Permite dividir una red en un conjunto de redes.
+**Address space:** La direccion de la red que se desea crear
 
-**Address Range:** El intervalo de direcciones ip con las que se cuentan dentro de la red.?
+**Address Range:** El conjunto de direcciones con las que cuenta una red.
+
+
 * Â¿QuÃ© son las *Availability Zone* y por quÃ© seleccionamos 3 diferentes zonas?. Â¿QuÃ© significa que una IP sea *zone-redundant*
 
 Cada zona de disponibilidad hace referencia a una ubicacion geograficas, asi que creamos tres diferentes por que azure nos ofrece mediante estas zonas separadas para evitar problemas de disponibilidad?
-* Â¿CuÃ¡l es el propÃ³sito del *Network Security Group*
+
+
+* cual es el pproposito del *Network Security Group*
 
 El objetivo de los grupos de redes de seguridad es permitir la administracion de puertos, delimitar el trafico que de internet que se da hacia nuestra maquina virtual.?
+
 * Informe de newman 1 (Punto 2)
 
-![img](images/part2/solution/estadisticas_response.PNG))
+![img](images/part2/solution/estadisticas_response.PNG)
+
+
+Se ve claramente una mejora en los tiempos de respuesta entre la prueba del parte 1 a la misma en el parte 2 debido a que fue de 1 minuto 43.9 segundos a simplemente 22 segundos de tiempo de respuesta al igual que el tiempo de ejecucion de ambos se vio considerablemente alterado, con una diferencia 81.9 segundos es aproximadamente con el balanceador de carga un minuto mas rapido en responder a las peticiones.p
 * Presente el Diagrama de Despliegue de la soluciÃ³n.
 
 ![img](images/deploy.png)
@@ -789,12 +800,7 @@ Son un conjunto de puebas que le permite conocer al balanceador los recursos y l
 * Â¿QuÃ© es una *Virtual Network*? Â¿QuÃ© es una *Subnet*? Â¿Para quÃ© sirven los *address space* y *address range*?
 
 
-**Virtual network:** Hace referencia a crear una red privada mediante la cual un conjunto de maquinas virtuales se encuentran vinculadas.
-**Subnet:** Conjunto de redes que se pueden crear a partir de un conjunto de ips dadas.
-
-**Address space:** La direccion de la red que se desea crear
-
-**Address Range:** El conjunto de direcciones con las que cuenta una red.I
+I
 * Â¿QuÃ© son las *Availability Zone* y por quÃ© seleccionamos 3 diferentes zonas?. Â¿QuÃ© significa que una IP sea *zone-redundant*?
 **Ability Zone:** Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cada zona está compuesta por uno o más centros de datos equipados con alimentación, refrigeración y redes independientes.
 
@@ -818,4 +824,4 @@ Nos permite definir que trafico se va a dar desde nuestras maquinas virtuales ha
 
 - [https://docs.microsoft.com/en-us/azure/availability-zones/az-overview](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
-- [https://docs.microsoft.com/en-us/azure/virtual-network/security-overview](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview)
+- [https://docs.microsoft.com/en-us/azure/virtual-network/security-overview](https://docs.microsoft.com/en-us/azure/virtual-network/security-oiew))
