@@ -360,17 +360,18 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 
 **Preguntas**
 
-* Â¿CuÃ¡les son los tipos de balanceadores de carga en Azure y en quÃ© se diferencian?, Â¿QuÃ© es SKU, quÃ© tipos hay y en quÃ© se diferencian?, Â¿Por quÃ© el balanceador de carga necesita una IP pÃºblica?
-* Â¿CuÃ¡l es el propÃ³sito del *Backend Pool*?
+* ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+* ¿Cuál es el propósito del Backend Pool?
 Hace referencia al conjunto de maquinas virtuales que se encargan de responder a las peticiones de los usuarios.
-* Â¿CuÃ¡l es el propÃ³sito del *Health Probe*?
+* ¿Cuál es el propósito del Health Probe?
 
 Son un conjunto de puebas que le permite conocer al balanceador los recursos y la proximidad para lograr responder lo mas eficientemente posible a una solicitud.
 
-* Â¿CuÃ¡l es el propÃ³sito de la *Load Balancing Rule*? Â¿QuÃ© tipos de sesiÃ³n persistente existen, por quÃ© esto es importante y cÃ³mo puede afectar la escalabilidad del sistema?.
+*¿Cuál es el propósito de la Load Balancing Rule? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
 
-Este sirve de mecanismo que le dice al balanceador por que uerto va a consultar a los nodos, y el por que puerto va a ofrecer el servicio.p
-* Â¿QuÃ© es una *Virtual Network*? Â¿QuÃ© es una *Subnet*? Â¿Para quÃ© sirven los *address space* y *address range*
+Este sirve de mecanismo que le dice al balanceador por que uerto va a consultar a los nodos, y el por que puerto va a ofrecer el servicio.
+
+* ¿Qué es una Virtual Network? ¿Qué es una Subnet? ¿Para qué sirven los address space y address range?
 
 Permite conectar los recursos mediante una red privada.
 
@@ -382,7 +383,7 @@ Permite conectar los recursos mediante una red privada.
 **Address Range:** El conjunto de direcciones con las que cuenta una red.
 
 
-* Â¿QuÃ© son las *Availability Zone* y por quÃ© seleccionamos 3 diferentes zonas?. Â¿QuÃ© significa que una IP sea *zone-redundant*
+* ¿Qué son las Availability Zone y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea zone-redundant?
 
 **Ability Zone:** Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cada zona esta compuesta por uno o mas centros de datos equipados con alimentacion, refrigeracion y redes independientes.
 
@@ -391,7 +392,7 @@ Pusimos 3 diferentes dado a que esto nos garantiza poder responder a las peticio
 Cada zona de disponibilidad hace referencia a una ubicacion geograficas, asi que creamos tres diferentes por que azure nos ofrece mediante estas zonas separadas para evitar problemas de disponibilidad?
 
 
-* cual es el pproposito del *Network Security Group*
+* cual es el pproposito del *Network Security Group 
 
 El objetivo de los grupos de redes de seguridad es permitir la administracion de puertos, delimitar el trafico que de internet que se da hacia nuestra maquina virtual.
 
@@ -402,8 +403,9 @@ El objetivo de los grupos de redes de seguridad es permitir la administracion de
 ![img](images/part2/solution/estadisticas_response.PNG)
 
 
-Se ve claramente una mejora en los tiempos de respuesta entre la prueba del parte 1 a la misma en el parte 2 debido a que fue de 1 minuto 43.9 segundos a simplemente 22 segundos de tiempo de respuesta al igual que el tiempo de ejecucion de ambos se vio considerablemente alterado, con una diferencia 81.9 segundos es aproximadamente con el balanceador de carga un minuto mas rapido en responder a las peticiones.p
-* Presente el Diagrama de Despliegue de la soluciÃ³n.
+Se ve claramente una mejora en los tiempos de respuesta entre la prueba del parte 1 a la misma en el parte 2 debido a que fue de 1 minuto 43.9 segundos a simplemente 22 segundos de tiempo de respuesta al igual que el tiempo de ejecucion de ambos se vio considerablemente alterado, con una diferencia 81.9 segundos es aproximadamente con el balanceador de carga un minuto mas rapido en responder a las peticiones.
+
+* Presente el Diagrama de Despliegue de la solución.
 
 ![img](images/deploy.png)
 
