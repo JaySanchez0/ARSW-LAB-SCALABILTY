@@ -384,12 +384,18 @@ Permite conectar los recursos mediante una red privada.
 
 * Â¿QuÃ© son las *Availability Zone* y por quÃ© seleccionamos 3 diferentes zonas?. Â¿QuÃ© significa que una IP sea *zone-redundant*
 
+**Ability Zone:** Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cada zona esta compuesta por uno o mas centros de datos equipados con alimentacion, refrigeracion y redes independientes.
+
+Pusimos 3 diferentes dado a que esto nos garantiza poder responder a las peticiones.
+
 Cada zona de disponibilidad hace referencia a una ubicacion geograficas, asi que creamos tres diferentes por que azure nos ofrece mediante estas zonas separadas para evitar problemas de disponibilidad?
 
 
 * cual es el pproposito del *Network Security Group*
 
-El objetivo de los grupos de redes de seguridad es permitir la administracion de puertos, delimitar el trafico que de internet que se da hacia nuestra maquina virtual.?
+El objetivo de los grupos de redes de seguridad es permitir la administracion de puertos, delimitar el trafico que de internet que se da hacia nuestra maquina virtual.
+
+
 
 * Informe de newman 1 (Punto 2)
 
@@ -405,14 +411,24 @@ Se ve claramente una mejora en los tiempos de respuesta entre la prueba del part
 ## Bibliografia
 
 
-[https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool)
-)
-[https://docs.microsoft.com/es-es/azure/traffic-manager/traffic-manager-load-balancing-azure](https://docs.microsoft.com/es-es/azure/traffic-manager/traffic-manager-load-balancing-azure)
+- [https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool)
 
+- [https://docs.microsoft.com/es-es/azure/traffic-manager/traffic-manager-load-balancing-azure](https://docs.microsoft.com/es-es/azure/traffic-manager/traffic-manager-load-balancing-azure)
+
+- [https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview)
+
+- [https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool)
+- [https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
+
+- [https://docs.microsoft.com/en-us/azure/availability-zones/az-overview](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
+
+- [https://docs.microsoft.com/en-us/azure/virtual-network/security-overview](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview)
 
 
 [https://github.com/MicrosoftDocs/azure-docs.es-es/blob/master/articles/availability-zones/az-overview.md](https://github.com/MicrosoftDocs/azure-docs.es-es/blob/master/articles/availability-zones/az-overview.md)
-=======
+
+
+
 ### Escuela Colombiana de IngenierÃ­a
 ### Arquitecturas de Software - ARSW
 
@@ -802,7 +818,7 @@ Son un conjunto de puebas que le permite conocer al balanceador los recursos y l
 
 I
 * Â¿QuÃ© son las *Availability Zone* y por quÃ© seleccionamos 3 diferentes zonas?. Â¿QuÃ© significa que una IP sea *zone-redundant*?
-**Ability Zone:** Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cada zona está compuesta por uno o más centros de datos equipados con alimentación, refrigeración y redes independientes.
+**Ability Zone:** Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure. Cada zona esta compuesta por uno o mas centros de datos equipados con alimentacion, refrigeracion y redes independientes.
 
 Pusimos 3 diferentes dado a que esto nos garantiza poder responder a las peticiones.
 
@@ -824,4 +840,4 @@ Nos permite definir que trafico se va a dar desde nuestras maquinas virtuales ha
 
 - [https://docs.microsoft.com/en-us/azure/availability-zones/az-overview](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
 
-- [https://docs.microsoft.com/en-us/azure/virtual-network/security-overview](https://docs.microsoft.com/en-us/azure/virtual-network/security-oiew))
+- [https://docs.microsoft.com/en-us/azure/virtual-network/security-overview](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview)
