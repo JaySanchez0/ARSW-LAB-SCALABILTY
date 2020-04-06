@@ -114,13 +114,10 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
     ```
-<<<<<<< HEAD
+
 
     ![](imgFuncionamiento/Newman.PNG)
-
-=======
     
->>>>>>> a2a6a68bd07c05f19e6f975aa1d1b9f890061fe9
 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.
 
 ![Imágen 3](images/part1/part1-vm-resize.png)
@@ -131,15 +128,15 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     
     * 1000000
 
-    ![](imgFuncionamiento/fibonacci1010000.PNG)
+    ![](imgFuncionamiento/fibonacci100000.PNG)
 
     * 1010000
 
-    ![](imgFuncionamiento/fibonacci1020000.PNG)
+    ![](imgFuncionamiento/fibonacci1010000.PNG)
 
     * 1020000
 
-    ![](imgFuncionamiento/fibonacci1050000.PNG)
+    ![](imgFuncionamiento/fibonacci1020000.PNG)
 
 
     * 1030000
@@ -148,7 +145,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
     * 1040000
 
-    ![](imgFuncionamiento/fibonacci1050000.PNG)
+    ![](imgFuncionamiento/fibonacci1040000.PNG)
 
     * 1050000
 
@@ -177,7 +174,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
     * Paso 9
 
-    [](imgFuncionamiento/b2msNewman.PNG)
+    ![](imgFuncionamiento/b2msNewman.PNG)
 
     
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
@@ -218,7 +215,7 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
     ![](imgFuncionamiento/Newman.PNG)
 
-    [](imgFuncionamiento/b2msNewman.PNG)
+    ![](imgFuncionamiento/b2msNewman.PNG)
 
 
     * Tiempos de ejecución de cada petición.
