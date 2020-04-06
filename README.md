@@ -115,29 +115,136 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
     newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
     ```
 
+    ![](imgFuncionamiento/Newman.PNG)
+
 10. La cantidad de CPU consumida es bastante grande y un conjunto considerable de peticiones concurrentes pueden hacer fallar nuestro servicio. Para solucionarlo usaremos una estrategia de Escalamiento Vertical. En Azure diríjase a la sección *size* y a continuación seleccione el tamaño `B2ms`.
 
 ![Imágen 3](images/part1/part1-vm-resize.png)
 
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
+
+    * Paso 7 
+    
+    * 1000000
+
+    ![](imgFuncionamiento/fibonacci1010000.PNG)
+
+    * 1010000
+
+    ![](imgFuncionamiento/fibonacci1020000.PNG)
+
+    * 1020000
+
+    ![](imgFuncionamiento/fibonacci1050000.PNG)
+
+
+    * 1030000
+
+    ![](imgFuncionamiento/fibonacci1030000.PNG)
+
+    * 1040000
+
+    ![](imgFuncionamiento/fibonacci1050000.PNG)
+
+    * 1050000
+
+    ![](imgFuncionamiento/fibonacci1050000.PNG)
+
+
+    * 1060000
+
+    ![](imgFuncionamiento/fibonacci1060000.PNG)
+
+    * 1070000
+
+    ![](imgFuncionamiento/fibonacci1070000.PNG)
+
+    * 1080000
+
+    ![](imgFuncionamiento/fibonacci1080000.PNG)
+
+    * 1090000    
+
+    ![](imgFuncionamiento/fibonacci1090000.PNG)
+
+    * Paso 8
+
+    [](imgFuncionamiento/reppas9.PNG)
+
+    * Paso 9
+
+    [](imgFuncionamiento/b2msNewman.PNG)
+
+    
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+
+    * Azure crea 6 recursos adicionales a la VM: Cuenta de almacenamiento, disco, grupo de seguridad de red, direccion IP publica,interfaz de red. Red virtual
+
 2. ¿Brevemente describa para qué sirve cada recurso?
+
+        * Cuenta de almacenamiento: Almacena datos en un disco virtual.        
+        * Disco:Es la version virtualizada de la maquina que creamos, guarda el sistema operativo y otros componentes.
+        * Grupo de seguridad de red: Filtra el trafico de la red de la maquina.
+        * Direccion IP publica: Permite saber cuál es la dirección IP que se usa para la conexión saliente
+        * Interfaz de red: Permite a la maquina virtual comunicarse con recursos en internet.
+        * Red virtual: Red por donde opera la interfaz de red.
+
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+
+        * Porque al cerrar la conexion ssh ya no hay conexion con la maquina virtual, es necesario abrir un puerto por donde pueda ser accesible todo el tiempo.
+        
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+    ![](imgFuncionamiento/tiempo.PNG)
+
+    * Los tiempos estan fundamentados en la mala implementación de la solución, que resuelve la formula paso a paso.
+
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+    ![](imgFuncionamiento/CPU.PNG)
+
+    * La cantidad de CPU consumida representa las bajas condiciones con las que se creo la maquina virtual.
+
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
+
+    ![](imgFuncionamiento/Newman.PNG)
+
+    [](imgFuncionamiento/b2msNewman.PNG)
+
+
     * Tiempos de ejecución de cada petición.
+
+    * Los tiempos de ejecucion de cada una de las peticiones es muy similar , esto se pued evidenciar en los graficos mostrados previamente 
+
     * Si hubo fallos documentelos y explique.
+
+    
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+    *  B1ls tiene: 1 vCPU, 0.5 GB de RAM, 2 discos de datos, 160 E/S, 4 GB de almacenamiento temporal
+
+    * B2ms tiene: 2 vCPU, 8 GB de RAM, 4 discos de datos, 1920 E/S, 16 GB de almacenamiento temporal
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+    * No es una buena solución, los tiempos de respuesta del programa no muestran una mejora significativa respeacto a la maquina base.  
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+    * Hubo una reducción en el consumo de la CPU gracias a las mejores condiciones de la maquina, pero esto traera consigo un aumento en los gatos injustificados  
+    
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+    * Sí, la visualizacion en el consumo de la CPU es mejor debido a la mayor capacidad de procesamiento de la maquina b2ms, pero los tiempos no mejoraron gracias a que estos dependen de la ejecución secuencial del programa mas no de la maquina.
+
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+    * El comportamiento del sistema sigue siendo el mismo 
 
 ### Parte 2 - Escalabilidad horizontal
 
