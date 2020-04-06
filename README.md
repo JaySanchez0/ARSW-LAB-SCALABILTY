@@ -660,17 +660,31 @@ Son un conjunto de puebas que le permite conocer al balanceador los recursos y l
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
 **Virtual network:** Hace referencia a crear una red privada mediante la cual un conjunto de maquinas virtuales se encuentran vinculadas.
-**Subnet:** Conjunto de redes que se pueden crear a partir de un conjunto de ips dadas.I
+**Subnet:** Conjunto de redes que se pueden crear a partir de un conjunto de ips dadas.
+
+**Address space:** La direccion de la red que se desea crear
+
+**Address Range:** El conjunto de direcciones con las que cuenta una red.I
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+**Ability Zone:** Las zonas de disponibilidad son ubicaciones f�sicas �nicas dentro de una regi�n de Azure. Cada zona est� compuesta por uno o m�s centros de datos equipados con alimentaci�n, refrigeraci�n y redes independientes.
+
+Pusimos 3 diferentes dado a que esto nos garantiza poder responder a las peticiones.
+
 * ¿Cuál es el propósito del *Network Security Group*?
+Nos permite definir que trafico se va a dar desde nuestras maquinas virtuales hacia internet(Administracion de puertos y protocolos).
+
 * Informe de newman 1 (Punto 2)
+)
 * Presente el Diagrama de Despliegue de la solución.
 
-![img](images/deploy.png)
+![img](images/deploy.png))
 
 
 ## Bibliografia 
 
-[https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool)
-[https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
+- [https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool)
+- [https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
 
+- [https://docs.microsoft.com/en-us/azure/availability-zones/az-overview](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview)
+
+- [https://docs.microsoft.com/en-us/azure/virtual-network/security-overview](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview)
