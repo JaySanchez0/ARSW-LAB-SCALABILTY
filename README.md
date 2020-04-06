@@ -653,12 +653,33 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 **Preguntas**
 
 * ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+
+**Tipos:**
+
+- **Publico:** puede proporcionar conexiones salientes para m�quinas virtuales (VM) dentro de su red virtual. 
+- **Privado: ** donde se necesitan IP privadas solo en la interfaz. Los equilibradores de carga internos se utilizan para equilibrar el tr�fico dentro de una red virtual. 
+
+**Diferencias:** Uno se encarga de balancear la carga de filtrar el contenido hacia internet mientras el otro lo hace para solicitudes dentro de la misma red.
+
+El balanceador necesita ip publica debido a que este ofrece el servicio de manera publica hacia intenet, este consulta a los nodos pero el nodo no da la respuesta si no el balanceador.
+
 * ¿Cuál es el propósito del *Backend Pool*?
+
+
 Hace referencia al conjunto de maquinas virtuales que se encargan de responder a las peticiones de los usuarios.
+
+
 * ¿Cuál es el propósito del *Health Probe*?
+
+
 Son un conjunto de puebas que le permite conocer al balanceador los recursos y la proximidad para lograr responder lo mas eficientemente posible a una solicitud.
+
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
+
+
 * ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+
+
 **Virtual network:** Hace referencia a crear una red privada mediante la cual un conjunto de maquinas virtuales se encuentran vinculadas.
 **Subnet:** Conjunto de redes que se pueden crear a partir de un conjunto de ips dadas.
 
@@ -681,6 +702,7 @@ Nos permite definir que trafico se va a dar desde nuestras maquinas virtuales ha
 
 
 ## Bibliografia 
+- [https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview)
 
 - [https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool](https://docs.microsoft.com/en-us/azure/frontdoor/front-door-backend-pool)
 - [https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview)
